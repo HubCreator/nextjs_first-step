@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { MdFingerprint } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
@@ -13,14 +12,6 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  //   const showButton = () => {
-  //     if (window.innerWidth <= 960) {
-  //       setButton(false);
-  //     } else {
-  //       setButton(true);
-  //     }
-  //   };
-
   useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth <= 960) {
@@ -29,7 +20,6 @@ const Navbar = () => {
         setButton(true);
       }
     });
-    // showButton();
   }, []);
 
   return (

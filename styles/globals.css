@@ -1,3 +1,6 @@
+@import "./Button.css";
+@import "./Navbar.css";
+
 html,
 body {
   padding: 0;

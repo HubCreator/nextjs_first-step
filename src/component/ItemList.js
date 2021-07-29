@@ -6,7 +6,8 @@ export default function ItemList({ list }) {
         return (
           <div className="item" key={index}>
             <div className="item-name">{item.name}</div>
-            <img src={item.image_link} className="item-img" />
+            <img className="item-img" src={item.image_link} />
+            <div className="item-price">{item.price} $</div>
             <div className="item-description">{item.description}</div>
           </div>
         );

@@ -15,6 +15,7 @@ export default function Home() {
   useEffect(() => {
     getData();
   }, []);
+
   return (
     <div>
       <Head>

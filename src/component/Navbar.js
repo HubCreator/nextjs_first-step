@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { MdFingerprint } from "react-icons/md";
+import { GiMusicalScore } from "react-icons/gi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { NavbarData } from "./NavbarData";
 import { Button } from "./Button";
+import { Image } from "next/image";
+import logoImage from "../../public/images/img2.jpeg";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -47,39 +50,39 @@ const Navbar = () => {
         <div className={scrollStatus ? "navbar glass" : "navbar"}>
           <div className="navbar-container container">
             <div className="navbar-logo" onClick={closeMobileMenu}>
-              <MdFingerprint className="navbar-icon" />
-              LAVISH
+              <GiMusicalScore className="navbar-icon" />
+              Music Player
             </div>
-
-            <div className="menu-icon" onClick={handleClick}>
-              {click ? <FaTimes /> : <FaBars />}
-            </div>
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
-              {NavbarData.map((item, index) => {
-                return (
-                  <li key={index} onClick={() => router.push(`${item.path}`)}>
-                    <div className={item.cName}>{item.title}</div>
-                  </li>
-                );
-              })}
-
-              <li className="nav-btn">
-                {button ? (
-                  <div className="btn-link">
-                    <Button buttonStyle="btn--outline" buttonSize="btn--medium">
-                      SIGN UP1
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="btn-link" onClick={closeMobileMenu}>
-                    <Button buttonStyle="btn--outline" buttonSize="btn--mobile">
-                      SIGN UP2
-                    </Button>
-                  </div>
-                )}
-              </li>
-            </ul>
           </div>
+
+          <div className="menu-icon" onClick={handleClick}>
+            {click ? <FaTimes /> : <FaBars />}
+          </div>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            {NavbarData.map((item, index) => {
+              return (
+                <li key={index} onClick={() => router.push(`${item.path}`)}>
+                  <div className={item.cName}>{item.title}</div>
+                </li>
+              );
+            })}
+
+            <li className="nav-btn">
+              {button ? (
+                <div className="btn-link">
+                  <Button buttonStyle="btn--outline" buttonSize="btn--medium">
+                    SIGN UP1
+                  </Button>
+                </div>
+              ) : (
+                <div className="btn-link" onClick={closeMobileMenu}>
+                  <Button buttonStyle="btn--outline" buttonSize="btn--mobile">
+                    SIGN UP2
+                  </Button>
+                </div>
+              )}
+            </li>
+          </ul>
         </div>
       </IconContext.Provider>
     </>

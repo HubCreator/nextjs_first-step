@@ -37,7 +37,8 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  /* color: #fff; */
+  color: #e1a64c;
   display: flex;
   justify-self: start;
   align-items: center;

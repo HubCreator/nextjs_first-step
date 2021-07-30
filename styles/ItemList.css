@@ -1,5 +1,7 @@
 .item-list-background {
-  background: linear-gradient(to right top, grey, #6cdbeb);
+  /* background: linear-gradient(to right top, #545252, #fff); */
+  /* background: radial-gradient(to top right, #545252, #fff); */
+  background-color: #545252;
 }
 
 .item-list {

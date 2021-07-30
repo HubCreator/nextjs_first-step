@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Car({ car }) {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function Car({ car }) {
         </title>
       </Head>
       <h1>Hello {id}</h1>
-      <img src={car.image} width="300px" />
+      <Image src={car.image} width="300px" />
     </>
   );
 }

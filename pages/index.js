@@ -1,35 +1,28 @@
 import axios from "axios";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 import ItemList from "../src/component/ItemList";
-import { VscLoading } from "react-icons/vsc";
 
-export default function Home() {
-  const [dataList, setDataList] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const API_URL = process.env.NEXT_PUBLIC_API_URL; // browser environment
-
-  const getData = () => {
-    axios
-      .get(API_URL)
-      .then((res) => setDataList(res.data))
-      .then(setLoading(false));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+export default function Home({ list }) {
   return (
     <div>
       <Head>
         <title>Leo | Home</title>
       </Head>
-      {loading ? (
-        <VscLoading className="loading-icon" />
-      ) : (
-        <ItemList list={dataList} />
-      )}
+
+      {list && <ItemList list={list} />}
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const apiUrl = process.env.apiUrl;
+  const res = await axios.get(apiUrl);
+  const data = res.data;
+
+  return {
+    props: {
+      list: data,
+      name: process.env.name,
+    },
+  };
 }

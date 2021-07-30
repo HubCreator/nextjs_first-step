@@ -14,8 +14,10 @@ const Post = () => {
   };
 
   useEffect(() => {
-    getData();
-  }, []);
+    if (id && id > 0) {
+      getData();
+    }
+  }, [id]);
 
   return (
     <div className="single-item">

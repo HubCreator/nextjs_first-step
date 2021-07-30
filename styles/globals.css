@@ -18,3 +18,38 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@keyframes loading {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  0% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.loading-icon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: tomato;
+  /* animation-name: loading;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: normal; */
+  animation: 2s infinite ease-in-out loading;
+}

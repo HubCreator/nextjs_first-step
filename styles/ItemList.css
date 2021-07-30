@@ -1,3 +1,7 @@
+.item-list-background {
+  background: linear-gradient(to right top, grey, #6cdbeb);
+}
+
 .item-list {
   display: grid;
   grid-template-columns: 1fr;

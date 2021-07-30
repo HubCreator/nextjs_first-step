@@ -9,25 +9,42 @@ import { Button } from "./Button";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [scrollStatus, setScrollStatus] = useState(false);
   const router = useRouter();
 
-  const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const handleClick = () => setClick(!click);
+  const handleResize = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  const handleScroll = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 80) {
+      setScrollStatus(true);
+    } else {
+      setScrollStatus(false);
+    }
+  };
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth <= 960) {
-        setButton(false);
-      } else {
-        setButton(true);
-      }
-    });
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <div className="navbar">
+        <div className={scrollStatus ? "navbar glass" : "navbar"}>
           <div className="navbar-container container">
             <div className="navbar-logo" onClick={closeMobileMenu}>
               <MdFingerprint className="navbar-icon" />

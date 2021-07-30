@@ -10,6 +10,16 @@
   z-index: 999;
 }
 
+.glass {
+  background: linear-gradient(
+    to right bottom,
+    rgba(225, 225, 225, 0.2),
+    rgba(225, 225, 225, 0.2)
+  );
+  z-index: 3;
+  backdrop-filter: blur(1rem);
+}
+
 .navbar-container {
   display: flex;
   justify-content: space-between;

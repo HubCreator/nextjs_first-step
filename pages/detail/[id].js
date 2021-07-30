@@ -1,9 +1,21 @@
 import axios from "axios";
-// import { VscLoading } from "react-icons/vsc";
+import { VscLoading } from "react-icons/vsc";
 import Item from "../../src/component/Item";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Post = ({ item, name }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <>
+        <VscLoading className="loading-icon" />
+      </>
+    );
+  }
+
+  console.log(router.isFallback);
   return (
     <>
       {item && (
@@ -13,7 +25,6 @@ const Post = ({ item, name }) => {
             <meta name="description" context={item.description} />
           </Head>
           <Item data={item} />
-          {name} 환경!!!!!!!!!!!!!!
         </>
       )}
     </>

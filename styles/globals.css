@@ -48,9 +48,5 @@ a {
   justify-content: center;
   align-items: center;
   color: tomato;
-  /* animation-name: loading;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: normal; */
   animation: 2s infinite ease-in-out loading;
 }

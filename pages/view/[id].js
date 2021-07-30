@@ -3,7 +3,7 @@ import axios from "axios";
 import Item from "../../src/component/Item";
 import Head from "next/head";
 
-const Post = ({ item }) => {
+const Post = ({ item, name }) => {
   return (
     <>
       {item && (
@@ -13,6 +13,7 @@ const Post = ({ item }) => {
             <meta name="description" context={item.description} />
           </Head>
           <Item data={item} />
+          {name} 환경!!!!!!!!!!!!!!
         </>
       )}
     </>
@@ -31,6 +32,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       item: data,
+      name: process.env.name,
     },
   };
 }

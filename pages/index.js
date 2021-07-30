@@ -7,8 +7,7 @@ import { VscLoading } from "react-icons/vsc";
 export default function Home() {
   const [dataList, setDataList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_URL =
-    "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL; // browser environment
 
   const getData = () => {
     axios

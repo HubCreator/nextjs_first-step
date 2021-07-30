@@ -1,32 +1,50 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { VscLoading } from "react-icons/vsc";
+import Item from "../../src/component/Item";
 
-const Post = () => {
-  const router = useRouter();
-  const { id } = router.query;
+const Post = ({ item }) => {
+  //   const router = useRouter();
+  //   const { id } = router.query;
 
-  const [data, setData] = useState([]);
-  const API_URL = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
+  //   const [loading, setLoading] = useState(true);
+  //   const [data, setData] = useState([]);
+  //   const API_URL = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
 
-  const getData = () => {
-    axios.get(API_URL).then((res) => setData(res.data));
-  };
+  //   const getData = () => {
+  //     axios
+  //       .get(API_URL)
+  //       .then((res) => setData(res.data))
+  //       .then(setLoading(false));
+  //   };
 
-  useEffect(() => {
-    if (id && id > 0) {
-      getData();
-    }
-  }, [id]);
+  //   useEffect(() => {
+  //     if (id && id > 0) {
+  //       getData();
+  //     }
+  //   }, [id]);
 
   return (
-    <div className="single-item">
-      <div className="single-item-name">{data.name}</div>
-      <img className="single-item-img" src={data.image_link} />
-      <div className="single-item-price">{data.price} $</div>
-      <div className="single-item-description">{data.description}</div>
-    </div>
+    <>
+      {/* {loading ? <VscLoading className="loading-icon" /> : <Item data={data} />} */}
+      {item && <Item data={item} />}
+    </>
   );
 };
 
 export default Post;
+
+// 서버에서 데이터를 가져와서 주입
+export async function getServerSideProps(context) {
+  const id = context.params.id;
+  const apiUrl = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
+  const res = await axios.get(apiUrl);
+  const data = res.data;
+
+  return {
+    props: {
+      item: data,
+    },
+  };
+}

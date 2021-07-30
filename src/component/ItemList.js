@@ -6,7 +6,7 @@ export default function ItemList({ list }) {
       {list.map((item, index) => {
         return (
           <>
-            <Link href={`/view/${item.id}`}>
+            <Link href={`/detail/${item.id}`}>
               <div className="item" key={index}>
                 <div className="item-name">{item.name}</div>
                 <div

@@ -1,16 +1,18 @@
 .navbar {
-  background: #1c2237;
+  background-color: #1c2237;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  /* position: sticky; */
+  position: fixed;
+  width: 100%;
+  margin-bottom: 80px;
+  z-index: 10;
 }
 
-.glass {
+.navbar.glass {
   background: linear-gradient(
     to right bottom,
     rgba(225, 225, 225, 0.2),
@@ -27,7 +29,7 @@
 }
 
 .container {
-  z-index: 1;
+  z-index: 3;
   width: 100%;
   max-width: 1300px;
   margin-right: auto;
@@ -92,6 +94,7 @@
   }
 
   .nav-menu {
+    background-color: #1c2237;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -105,12 +108,23 @@
   }
 
   .nav-menu.active {
-    background: #1c2237;
+    background-color: #1c2237;
+    /* background-color: tomato; */
+    top: 80px;
     left: 0;
     opacity: 1;
     transition: all 0.6s ease;
-    z-index: 1;
   }
+
+  /* .item:hover {
+    display: none;
+    visibility: hidden;
+  }
+
+  .item:hover .item-description {
+    display: none;
+    visibility: hidden;
+  } */
 
   .nav-links {
     text-align: center;
@@ -149,6 +163,7 @@
     font-size: 1.8rem;
     cursor: pointer;
     color: #fff;
+    z-index: 99;
   }
 
   .fa-times {

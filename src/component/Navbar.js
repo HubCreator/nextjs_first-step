@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { MdFingerprint } from "react-icons/md";
 import { GiMusicalScore } from "react-icons/gi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { NavbarData } from "./NavbarData";
 import { Button } from "./Button";
-import { Image } from "next/image";
-import logoImage from "../../public/images/img2.jpeg";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -16,7 +13,10 @@ const Navbar = () => {
   const router = useRouter();
 
   const closeMobileMenu = () => setClick(false);
-  const handleClick = () => setClick(!click);
+  const handleClick = () => {
+    setClick(!click);
+    console.log("clicked");
+  };
   const handleResize = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -26,7 +26,6 @@ const Navbar = () => {
   };
 
   const handleScroll = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 80) {
       setScrollStatus(true);
     } else {
@@ -37,12 +36,21 @@ const Navbar = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
+    // const element = document.querySelector(".item");
+    // if (click === true) {
+    //   console.log(element);
+    //   element.classList.remove("item");
+    //   console.log(element);
+    // } ////////////////////////////////hover 떼는 방법?!!?
+    // else {
+    //   element.classList.add("itme");
+    // }
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [click]);
 
   return (
     <>

@@ -1,20 +1,6 @@
 import Link from "next/link";
-// import gsap from "gsap";
-// import { Power3 } from "gsap/gsap-core";
 
 export default function ItemList({ list }) {
-  // gsap.registerPlugin(Flip);
-  // const state = Flip.getState(".item");
-  // const element = document.querySelector(".item");
-  // element.classList.toggle("full-screen");
-
-  // Flip.from(state, {
-  //   duration: 1,
-  //   ease: "power1.inOut",
-  //   absolute: true,
-  //   onComplete: myFunc,
-  // });
-
   return (
     <div className="item-list-background">
       <div className="item-list">

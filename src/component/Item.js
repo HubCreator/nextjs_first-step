@@ -1,3 +1,5 @@
+import { AiOutlinePlayCircle } from "react-icons/ai";
+
 const Item = ({ data }) => {
   return (
     <div className="single-item-page">
@@ -23,13 +25,20 @@ const Item = ({ data }) => {
         </div>
 
         <div className="workspace-section">
-          <div className="workspace-section__title"></div>
-          <div className="workspace-section__content">
-            <div className="workspace-section__number"></div>
-            <div className="workspace-section__img"></div>
-            <div className="workspace-section__play-controller">
-              <div className="play-controller__playBtn"></div>
-              <div className="play-controller__playBar"></div>
+          <div className="workspace-section__title">Hello every one</div>
+
+          <div className="workspace-section__sigleRowOfNote">
+            <div className="sigleRowOfNote__content">
+              <div className="content__number">#1</div>
+              <div
+                className="content__img"
+                style={{ backgroundImage: `url(${data.image_link})` }}
+              ></div>
+
+              <div className="content__play-controller">
+                <AiOutlinePlayCircle className="play-controller__playBtn" />
+                <div className="play-controller__playBar"></div>
+              </div>
             </div>
           </div>
         </div>

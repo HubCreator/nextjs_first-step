@@ -16,17 +16,10 @@
   width: 30%;
   min-width: 400px;
   padding: 1rem;
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.workspace-section {
-  width: 70%;
-  padding: 1rem;
-  border: 1px solid red;
 }
 
 .info-section__main-img {
@@ -68,4 +61,63 @@
   border-radius: 10px;
   padding: 1rem;
   opacity: 0.8;
+}
+
+.workspace-section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: #a28355;
+  opacity: 0.7;
+  border-radius: 5px;
+  padding: 0 1rem;
+  color: #fff;
+}
+
+.workspace-section__title {
+  font-size: 25px;
+  font-weight: 550;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.workspace-section__sigleRowOfNote {
+  background-color: yellowgreen;
+  padding: 0.5rem;
+}
+
+.sigleRowOfNote__content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  .content__number {
+    font-size: 20px;
+  }
+  .content__img {
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 150px;
+    height: 150px;
+    margin: 0 1rem;
+  }
+  .content__play-controller {
+    background-color: tomato;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+
+    .play-controller__playBtn {
+      font-size: 40px;
+      margin: 1.5rem 1rem;
+    }
+    .play-controller__playBar {
+      width: 90%;
+      height: 1px;
+      background-color: #fff;
+      margin-top: 1rem;
+      margin-left: 2rem;
+    }
+  }
 }

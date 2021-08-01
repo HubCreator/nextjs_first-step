@@ -1,7 +1,6 @@
 import axios from "axios";
 import Head from "next/head";
-// import ItemList from "../src/component/ItemList";
-import ItemList2222 from "../src/component/ItemList2222";
+import ItemList from "../src/component/ItemList";
 
 export default function Home({ list }) {
   return (
@@ -10,8 +9,7 @@ export default function Home({ list }) {
         <title>Leo | Home</title>
       </Head>
 
-      {/* {list && <ItemList list={list} />} */}
-      {list && <ItemList2222 list={list} />}
+      {list && <ItemList list={list} />}
     </div>
   );
 }

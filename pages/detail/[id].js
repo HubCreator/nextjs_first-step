@@ -38,11 +38,6 @@ export async function getStaticPaths() {
   const res = await axios.get(apiUrl);
   const data = res.data;
   return {
-    // paths: [
-    //   { params: { id: "740" } },
-    //   { params: { id: "730" } },
-    //   { params: { id: "729" } },
-    // ],
     paths: data.slice(0, 10).map((item) => ({
       params: {
         id: item.id.toString(),

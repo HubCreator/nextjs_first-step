@@ -25,7 +25,6 @@
   align-items: center;
   position: relative;
   border: 0px solid #fff;
-  opacity: 0.7;
   will-change: transition;
   transition: all 0.6s ease-in-out;
 }
@@ -40,7 +39,6 @@
 .item:hover {
   /* transform: scale(1.1); */
   border: 1px solid rgb(250, 234, 234);
-  opacity: 1;
 }
 
 .item:hover .item-description {
@@ -63,13 +61,9 @@
 .item-price {
   font-size: 20px;
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
-.item-name,
-.item-price,
-.item-img {
-  flex: 1;
-}
 .item-name {
   /* width: 100%; */
   font-size: 25px;
@@ -77,13 +71,16 @@
   text-align: center;
   margin: 0;
   padding: 0;
+  height: 25%;
+  width: 100%;
 }
 
 .item .item-img {
   width: 60%;
   background-size: cover;
   background-position: center center;
-  padding-bottom: 70%;
+  padding-bottom: 60%;
+  margin: 1rem 0;
 }
 
 @media screen and (max-width: 691px) {

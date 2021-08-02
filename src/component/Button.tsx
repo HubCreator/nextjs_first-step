@@ -1,11 +1,24 @@
 // import React from "react";
 // import "../../styles/Button.css";
 
-const STYLES = ["btn--primary", "btn--outline"];
+interface buttonProps {
+  buttonStyle: string | null;
+  buttonSize: string | null;
+  buttonColor: string | null;
+  children: string | null;
+  type: any | null;
+  onClick: any | null;
+}
 
-const SIZES = ["btn--medium", "btn--large", "btn--mobile", "btn--wide"];
+// interface styleProps {
 
-const COLORS = ["primary", "blue", "red", "green"];
+// }
+
+const STYLES = ["btn--primary", "btn--outline", null];
+
+const SIZES = ["btn--medium", "btn--large", "btn--mobile", "btn--wide", null];
+
+const COLORS = ["primary", "blue", "red", "green", null];
 
 export const Button = ({
   buttonStyle,
@@ -14,7 +27,7 @@ export const Button = ({
   children,
   type,
   onClick,
-}) => {
+}: buttonProps) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];

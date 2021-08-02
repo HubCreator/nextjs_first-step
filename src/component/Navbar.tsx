@@ -6,6 +6,20 @@ import { IconContext } from "react-icons/lib";
 import { NavbarData } from "./NavbarData";
 import { Button } from "./Button";
 
+interface navbarData {
+  title: string;
+  path: string;
+  icon: string | null | object;
+  cName: string;
+}
+
+interface button {
+  buttonStyle: string;
+  buttonSize: string;
+  buttonColor: string;
+  children: string;
+}
+
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -78,13 +92,25 @@ const Navbar = () => {
             <li className="nav-btn">
               {button ? (
                 <div className="btn-link">
-                  <Button buttonStyle="btn--outline" buttonSize="btn--medium">
+                  <Button
+                    buttonStyle="btn--outline"
+                    buttonSize="btn--medium"
+                    buttonColor={null}
+                    type={null}
+                    onClick={null}
+                  >
                     SIGN UP1
                   </Button>
                 </div>
               ) : (
                 <div className="btn-link" onClick={closeMobileMenu}>
-                  <Button buttonStyle="btn--outline" buttonSize="btn--mobile">
+                  <Button
+                    buttonStyle="btn--outline"
+                    buttonSize="btn--mobile"
+                    buttonColor={null}
+                    type={null}
+                    onClick={null}
+                  >
                     SIGN UP2
                   </Button>
                 </div>

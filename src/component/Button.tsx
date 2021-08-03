@@ -10,10 +10,6 @@ interface buttonProps {
   onClick: any | null;
 }
 
-// interface styleProps {
-
-// }
-
 const STYLES = ["btn--primary", "btn--outline", null];
 
 const SIZES = ["btn--medium", "btn--large", "btn--mobile", "btn--wide", null];

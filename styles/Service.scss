@@ -1,8 +1,7 @@
 .service-container {
   position: absolute;
-  //   background-color: tomato;
   width: 100%;
-  height: 300vh;
+  height: 193vh;
   top: 80px;
   margin: 0;
   padding: 0;
@@ -16,7 +15,7 @@
   overflow: hidden;
 }
 
-.service-page__textBox {
+.service-page__rightBox {
   position: absolute;
   top: 0;
   left: 0;
@@ -24,6 +23,10 @@
   height: 100%;
   background-color: #333;
   clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+}
+
+.service-page__leftBox {
+  //   clip-path: polygon(0 0, 0 34%, 50% 100%, 49% 0, 50% 0);
 }
 
 .service-page__skew1 h2,
@@ -61,14 +64,22 @@
   height: 400px;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 
-  .piano {
-    z-index: 99;
-    width: 150px;
-    height: 250px;
-  }
-  .guitar {
-    z-index: 99;
-    width: 150px;
-    height: 250px;
+  .service-page__floor__instruments {
+    position: relative;
+
+    .piano {
+      position: absolute;
+      left: 70px;
+      z-index: 99;
+      width: 150px;
+      height: 250px;
+    }
+    .guitar {
+      position: absolute;
+      right: 70px;
+      z-index: 99;
+      width: 150px;
+      height: 250px;
+    }
   }
 }

@@ -1,0 +1,74 @@
+.service-container {
+  position: absolute;
+  //   background-color: tomato;
+  width: 100%;
+  height: 300vh;
+  top: 80px;
+  margin: 0;
+  padding: 0;
+}
+
+.service-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  overflow: hidden;
+}
+
+.service-page__textBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+}
+
+.service-page__skew1 h2,
+.service-page__skew2 h2 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 1em;
+  font-size: 12em;
+  color: #0488f5;
+  cursor: pointer;
+}
+
+.service-page__skew1 h2 {
+  opacity: 0.6;
+}
+
+.service-page__skew1 {
+  position: relative;
+  top: 50px;
+  transform: skewY(20deg);
+}
+
+.service-page__skew2 {
+  position: relative;
+  top: 50px;
+  transform: skewY(340deg);
+}
+
+.service-page__floor {
+  position: absolute;
+  top: 150vh;
+  background-color: grey;
+  width: 100%;
+  height: 400px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+  .piano {
+    z-index: 99;
+    width: 150px;
+    height: 250px;
+  }
+  .guitar {
+    z-index: 99;
+    width: 150px;
+    height: 250px;
+  }
+}

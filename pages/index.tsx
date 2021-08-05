@@ -1,7 +1,8 @@
 import axios from "axios";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import ItemList from "../src/component/ItemList";
+// import ItemList1 from "../src/component/ItemList1";
+import ItemList2 from "../src/component/ItemList2";
 
 interface dataProps {
   list: object;
@@ -15,7 +16,7 @@ const Home = (props: dataProps) => {
         <title>Leo | Home</title>
       </Head>
 
-      {props.list && <ItemList list={props.list} />}
+      {props.list && <ItemList2 list={props.list} />}
     </div>
   );
 };
